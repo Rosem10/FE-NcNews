@@ -1,5 +1,68 @@
-.App {
-  text-align: center;
+#card {
+  padding: 20px;
+  margin: 20px;
+  border: solid #2e294e 5px;
+  height: auto;
+  background-color: #f1e9da;
+  width: 90%;
+  display: flex;
+  align-items: center;
+}
+#singleArticleBox {
+  height: auto;
+  width: 700px;
+  background-color: grey;
+  padding: 30px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#topics {
+  display: flex;
+  flex-direction: column;
+}
+
+#topic {
+  font-weight: bold;
+  margin: 0px;
+}
+
+#author {
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  padding: 20px, 0px, 20px, 20px;
+  font-size: 30px;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.articleAdder {
+  padding: auto;
+  margin: 20px;
+  border: solid #2e294e 5px;
+  height: 50px;
+  background-color: #f1e9da;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+#addBox{
+  padding: auto;
+  width: 80%;
+  margin: 5px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .App-logo {
@@ -13,19 +76,15 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background: #2e294e;
+  grid-area: "header";
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  justify-content: flex-start;
+  padding: 20px;
+  color: #ffd400;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 @keyframes App-logo-spin {
