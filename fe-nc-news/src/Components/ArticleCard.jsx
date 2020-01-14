@@ -11,6 +11,7 @@ function ArticleCard(props) {
       </Link>
       <h3>Author: {article.author}</h3>
       <h3>Topic: {article.topic}</h3>
+      <h4>Created: {article.created_at}</h4>
     </div>
   );
 }

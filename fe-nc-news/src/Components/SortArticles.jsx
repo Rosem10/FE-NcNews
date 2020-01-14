@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class SortArticles extends Component {
   handleChange = event => {
-      
     this.props.OrderArticles(event.target.value);
   };
 
@@ -29,11 +28,19 @@ class SortArticles extends Component {
         <input
           type="radio"
           name="sortBy"
-          id="orderNewest"
-          value="newest"
+          id="orderTopic"
+          value="topic"
           onChange={this.handleChange}
         />
-        <label htmlFor="newest">Newest</label>
+        <label htmlFor="topic">Topic</label>
+        <input
+          type="radio"
+          name="sortBy"
+          id="orderNewest"
+          value="created_at"
+          onChange={this.handleChange}
+        />
+        <label htmlFor="created">Created</label>
       </form>
     );
   }

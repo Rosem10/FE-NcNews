@@ -7,6 +7,7 @@ import SingleArticle from "./Components/SingleArticle";
 import { Router } from "@reach/router";
 import "./App.css";
 import ArticlesByTopic from "./Components/ArticlesByTopic";
+import ErrorPage from "./Components/ErrorPage"
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <TopicsPage path="/topics" />
         <SingleArticle path="articles/:articleId" />
         <ArticlesByTopic path="topics/:topic" />
+        <ErrorPage default status={404} msg={"Page Not Found"}/>
+        
         {/* <AddArticlePage path="/add" /> */}
       </Router>
     </div>
