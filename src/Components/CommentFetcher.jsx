@@ -22,12 +22,11 @@ class CommentFetcher extends Component {
   submitComment = comment => {
     this.setState(currentState => {
       const comments = [comment, ...currentState.comments];
-      return (currentState.comments = comments);
+      return { comments };
     });
   };
 
   removeComment = id => {
-   
     this.setState(currentState => {
       const filtered = currentState.comments.filter(comment => {
         return comment.comment_id !== id;
@@ -40,27 +39,29 @@ class CommentFetcher extends Component {
     if (this.state.isLoading === true) {
       return <Loading />;
     }
-    const { articleId } = this.props;
-  
+    const { articleId, user } = this.props;
+
     return (
-      <ul>
-        <h2>Comments: </h2>
-        <CommentAdder
-          user={this.props.user}
-          submitComment={this.submitComment}
-          articleId={articleId}
-        />
-        {this.state.comments.map(comment => (
-          <li key={comment.comment_id}>
-            <CommentCard
-              articleId={articleId}
-              comment={comment}
-              user={this.props.user}
-              removeComment={this.removeComment}
-            />
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          <h2 >Comments: </h2>
+          <CommentAdder
+            user={user}
+            submitComment={this.submitComment}
+            articleId={articleId}
+          />
+          {this.state.comments.map(comment => (
+            <li className = "commentCard" key={comment.comment_id}>
+              <CommentCard
+                articleId={articleId}
+                comment={comment}
+                user={user}
+                removeComment={this.removeComment}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }

@@ -3,24 +3,25 @@ import DeleteComment from "./DeleteComment";
 import Voter from "./Voter";
 
 function CommentCard(props) {
-  const { comment, user, removeComment } = props;
+  const { comment, user, removeComment, articleId } = props;
 
   return (
-    <div className="commentCard">
-      <header id="commentHeader">
-        <h3 id="commenth3">By: {comment.author}</h3>
-        <h3 id="commenth3">At: {comment.created_at}</h3>
+    <div >
+      <header className = "commentHeader">
+        <h3>By: {comment.author}</h3>
+        <h3>{comment.created_at}</h3>
       </header>
-      <main id="commentBody">
+      <main className = "commentBody">
         {comment.body}{" "}
-        <Voter
+        <div className = "commentVoter"> <Voter
+          
           criteria={"comments"}
           votes={comment.votes}
           id={comment.comment_id}
-        />
+        /></div>
         {user === comment.author && (
           <DeleteComment
-            articleId={props.articleId}
+            articleId={articleId}
             commentId={comment.comment_id}
             removeComment={removeComment}
           />

@@ -3,9 +3,7 @@ import * as api from "./Api";
 
 class CommentAdder extends Component {
   state = {
-    valid: false,
-    input: "",
-    user: this.props.user
+    input: ""
   };
 
   handleChange = event => {
@@ -16,28 +14,29 @@ class CommentAdder extends Component {
   };
   handleSubmit = event => {
     event.preventDefault();
-    const { user, input } = this.state;
-    const { articleId } = this.props;
+    const { input } = this.state;
+    const { articleId, user } = this.props;
 
     const requestItem = { username: user, body: input };
-  
-    api.postComment(articleId, requestItem).then((res)=> this.props.submitComment(res.data.comment))
+
+    api
+      .postComment(articleId, requestItem)
+      .then(res => this.props.submitComment(res.data.comment));
   };
   render() {
+    const { input } = this.state;
+    const { user } = this.props;
     return (
-      <form
-        className="commentForm"
-        value={this.state.input}
-        onSubmit={this.handleSubmit}
-      >
+      <form className = "commentPoster" value={input} onSubmit={this.handleSubmit}>
         <p>Add Comment: </p>
-        <h2>{`Posting as ${this.props.user} `} </h2>
+        <h2>{`Posting as ${user} `} </h2>
         <input
           required
           type="text"
-          value={this.state.input}
+          value={input}
           onChange={this.handleChange}
           onClick={this.handleClick}
+        className = "commentAdder"
         />
         <button id="postCommentButton" type="submit">
           Post

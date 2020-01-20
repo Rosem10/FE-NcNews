@@ -7,34 +7,34 @@ class Voter extends Component {
     increment: 0
   };
   handleClick = increment => {
-    const { id, criteria} = this.props;
+    const { id, criteria } = this.props;
     this.setState({ voted: true, increment: increment });
-    api.changeVotesById(id, increment, criteria).then((res) => {console.log(res.data)});
+    api.changeVotesById(id, increment, criteria);
   };
-  
+
   render() {
     let { votes } = this.props;
+    let { voted } = this.state;
     if (this.state.voted === true) {
       votes += this.state.increment;
     }
 
     return (
       <form>
-        <h2>Current Votes:{votes}</h2>
         <button
+          className="button"
           onClick={() => this.handleClick(1)}
-          value="upvote"
-          disabled={this.state.voted}
+          disabled={voted}
         >
-          <span>Upvote △</span>
+          <span>△</span>
         </button>
+        <h2 className="vn">{votes}</h2>
         <button
-          onClick={() => {
-            this.handleClick(-1);
-          }}
-          disabled={this.state.voted}
+          className="button"
+          onClick={() => this.handleClick(-1)}
+          disabled={voted}
         >
-          <span>Downvote ▽</span>
+          <span> ▽</span>
         </button>
       </form>
     );

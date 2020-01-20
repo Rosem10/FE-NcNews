@@ -24,26 +24,26 @@ export const getArticleComments = article_id => {
 
 export const postComment = (articleId, comment) => {
   return axios.post(
-    `http://rose-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
+    `https://rose-nc-news-app.herokuapp.com/api/articles/${articleId}/comments`,
     comment
   );
 };
 
 export const removeComment = commentId => {
   return axios.delete(
-    `http://rose-nc-news-app.herokuapp.com/api/comments/${commentId}`
+    `https://rose-nc-news-app.herokuapp.com/api/comments/${commentId}`
   );
 };
 
 export const changeVotesById = (id, increment, criteria) => {
   return axios.patch(
-    `http://rose-nc-news-app.herokuapp.com/api/${criteria}/${id}`,
+    `https://rose-nc-news-app.herokuapp.com/api/${criteria}/${id}`,
     { inc_votes: increment }
   );
 };
 export const changeCommentVotesById = (id, increment) => {
   return axios.patch(
-    `http://rose-nc-news-app.herokuapp.com/api/comments/${id}`,
+    `https://rose-nc-news-app.herokuapp.com/api/comments/${id}`,
     {
       inc_votes: increment
     }

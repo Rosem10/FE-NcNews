@@ -7,9 +7,11 @@ class SortArticles extends Component {
 
   render() {
     return (
-      <form>
-        <label>Sort By: </label>
-        <label htmlFor="title">Title</label>
+      <form className="sortForm">
+        <label className="sortTitle">Sort By: </label>
+        <label className="sortOption" htmlFor="title">
+          Title
+        </label>
         <input
           type="radio"
           name="sortBy"
@@ -17,7 +19,10 @@ class SortArticles extends Component {
           value="title"
           onChange={this.handleChange}
         />
-        <label htmlFor="author">Author</label>
+
+        <label htmlFor="author" className="sortOption">
+          Author
+        </label>
         <input
           type="radio"
           name="sortBy"
@@ -25,7 +30,9 @@ class SortArticles extends Component {
           value="author"
           onChange={this.handleChange}
         />
-        <label htmlFor="comment_count">Comment Count: </label>
+        <label htmlFor="comment_count" className="sortOption">
+          Comment Count
+        </label>
         <input
           type="radio"
           name="sortBy"
@@ -33,7 +40,9 @@ class SortArticles extends Component {
           value="comment_count"
           onChange={this.handleChange}
         />
-        <label htmlFor="created">Created</label>
+        <label htmlFor="created" className="sortOption">
+          Created
+        </label>
         <input
           type="radio"
           name="sortBy"
@@ -41,7 +50,9 @@ class SortArticles extends Component {
           value="created_at"
           onChange={this.handleChange}
         />
-        <label htmlFor="votes">Vote Count</label>
+        <label htmlFor="votes" className="sortOption">
+          Vote Count
+        </label>
         <input
           type="radio"
           name="sortBy"

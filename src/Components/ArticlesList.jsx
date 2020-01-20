@@ -8,6 +8,8 @@ class ArticlesList extends Component {
   state = {
     articles: [],
     isLoading: true,
+    err: "",
+    hasError: false
   };
 
   fetchArticles(topic, orderBy, author) {
@@ -16,7 +18,7 @@ class ArticlesList extends Component {
       .then(res => {
         this.setState({ articles: res.data.articles, isLoading: false });
       })
-      .catch(err => this.setState({ err: err, isLoading: false }));
+      .catch(err => this.setState({ hasError: true, isLoading: false, err }));
   }
 
   componentDidMount() {
@@ -25,33 +27,36 @@ class ArticlesList extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.topic !== prevProps.topic) {
-      this.fetchArticles(this.props.topic);
+    const { topic, orderBy, author } = this.props;
+    if (topic !== prevProps.topic) {
+      this.fetchArticles(topic);
     }
-    if (this.props.orderBy !== prevProps.orderBy) {
-      this.fetchArticles(null, this.props.orderBy);
+    if (orderBy !== prevProps.orderBy) {
+      
+      this.fetchArticles(topic, orderBy);
     }
-    if (this.props.author !== prevProps.author) {
-      this.fetchArticles(null, null, this.props.author);
+    if (author !== prevProps.author) {
+      this.fetchArticles(null, null, author);
     }
   }
 
   render() {
+   const {user} = this.props
+    
     if (this.state.isLoading === true) {
       return <Loading />;
     }
-    if(this.state.err){
-      return (
-        <ErrorPage err={this.state.err}/>
-      )
+    if (this.state.hasError === true) {
+      const { err } = this.state;
+      return <ErrorPage err={err} />;
     }
-    const { articles } = this.state;
 
+    const { articles } = this.state;
     return (
-      <ul>
+      <ul className="articlesList">
         {articles.map(article => (
-          <li key={article.article_id}>
-            <ArticleCard article={article} />
+          <li className = "articleCard" key={article.article_id}>
+            <ArticleCard article={article} user={user} />
           </li>
         ))}
       </ul>

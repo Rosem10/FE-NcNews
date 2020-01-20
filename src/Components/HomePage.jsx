@@ -12,11 +12,13 @@ export default class HomePage extends Component {
   };
 
   render() {
+    const {user} = this.props
     return (
-      <div>
-        <SortArticles OrderArticles={this.OrderArticles} />
-        <h2>Here are all our articles...</h2>
-        <ArticlesList orderBy = {this.state.orderBy} />
+      <div className="articlesPage">
+        <div className="articlesSorter">
+          <SortArticles OrderArticles={this.OrderArticles}/>
+        </div>
+        <ArticlesList orderBy={this.state.orderBy} user={user} />
       </div>
     );
   }

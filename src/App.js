@@ -10,15 +10,16 @@ import ErrorPage from "./Components/ErrorPage";
 const loggedInUser = "weegembump";
 
 function App() {
+
   return (
-    <div>
+    <div  className = "app">
       <Header user={loggedInUser} />
       <Router primary={false}>
-        <HomePage path="/" />
+        <HomePage path="/" user={loggedInUser} />
         <SingleArticle path="articles/:articleId" user={loggedInUser} />
-        <ArticlesByTopic path="topics/:topic" />
-        <ArticlesByAuthor path="authors/:author" />
-        <ErrorPage default status={404} msg={"Page Not Found"} />
+        <ArticlesByTopic path="topics/:topic"  user = {loggedInUser}/>
+        <ArticlesByAuthor path="authors/:author" user ={loggedInUser} />
+        <ErrorPage default status={404} msg={"That page doesn't exist!"} />
       </Router>
     </div>
   );
