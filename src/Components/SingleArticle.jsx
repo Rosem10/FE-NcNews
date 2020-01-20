@@ -28,7 +28,6 @@ export default class SingleArticle extends Component {
     }
 
     const { article } = this.state;
-    const capsTopic = article.topic.toUpperCase();
 
     if (this.state.isLoading === true) {
       return <Loading />;
@@ -37,6 +36,7 @@ export default class SingleArticle extends Component {
       const { err } = this.state;
       return <ErrorPage err={err} />;
     }
+    const capsTopic = article.topic.toUpperCase();
     return (
       <div className="singleArticle">
         <p className="singleArticleHead">
@@ -57,7 +57,12 @@ export default class SingleArticle extends Component {
         </p>
 
         <div className="articleBody">{article.body}</div>
-        <div className = "commentsList"><CommentFetcher articleId={article.article_id} user={this.props.user} /></div>
+        <div className="commentsList">
+          <CommentFetcher
+            articleId={article.article_id}
+            user={this.props.user}
+          />
+        </div>
       </div>
     );
   }

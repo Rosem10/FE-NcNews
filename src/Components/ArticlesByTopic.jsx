@@ -4,9 +4,9 @@ import SortArticles from "./SortArticles";
 
 export default class ArticlesByTopic extends Component {
   state = {
-    orderBy: null,
+    orderBy: null
   };
-  
+
   OrderArticles = orderBy => {
     this.setState({ orderBy });
   };
@@ -15,7 +15,7 @@ export default class ArticlesByTopic extends Component {
     let { topic, user } = this.props;
     const topicName = topic.toUpperCase();
     const { orderBy } = this.state;
-    console.log(topic, orderBy)
+    
     return (
       <div>
         <div className="articlesSorter">

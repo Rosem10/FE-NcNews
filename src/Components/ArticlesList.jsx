@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
-import * as api from "./Api";
+import * as api from "../Api";
 import Loading from "./Loading";
 import ErrorPage from "./ErrorPage";
 

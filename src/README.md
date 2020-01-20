@@ -6,7 +6,7 @@ Northcoders News has articles which are divided into topics. Each article has us
 
 ## Links:
 
-Deployed version: https://stark-dawn-37767.herokuapp.com/
+Deployed version: https://ncnewsrose.herokuapp.com/
 Back-end code: https://github.com/Rosem10/nc-news.git
 Front-end code: https://github.com/Rosem10/FE-NcNews.git
 

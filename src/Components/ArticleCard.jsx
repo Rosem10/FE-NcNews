@@ -10,6 +10,7 @@ function ArticleCard(props) {
   if (user === article.author) {
     article.author = "you";
   }
+
   return (
     <div>
       <div>
