@@ -1,8 +1,10 @@
 import React from "react";
 import Nav from "./Nav";
 
+
 function Welcome(props) {
   const { user } = props;
+
   return (
     <div className="navBar">
       <div className="welcome">

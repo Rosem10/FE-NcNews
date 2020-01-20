@@ -4,6 +4,7 @@ import Loading from "./Loading";
 import TopicCard from "./TopicCard";
 import Home from "./Home"
 
+
 export default class Nav extends Component {
   state = {
     topics: [],
@@ -11,9 +12,11 @@ export default class Nav extends Component {
   };
 
   componentDidMount() {
-   api.getTopics().then(res =>
-      this.setState({ topics: res.data.topics, isLoading: false })
-    );
+    api
+      .getTopics()
+      .then(res =>
+        this.setState({ topics: res.data.topics, isLoading: false })
+      );
   }
 
   render() {
@@ -24,9 +27,9 @@ export default class Nav extends Component {
     }
     return (
       <ul className="nav">
-        <Home/>
+            <Home />
         {topics.map(topic => (
-         <TopicCard topic={topic} key={topic.slug}/>
+          <TopicCard topic={topic} key={topic.slug} />
         ))}
       </ul>
     );

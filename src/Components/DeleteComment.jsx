@@ -11,7 +11,7 @@ class DeleteComment extends Component {
   render() {
     const { id } = this.props;
     return (
-      <button id={id} onClick={this.handleClick}>
+      <button className = "deleteButton" id={id} onClick={this.handleClick}>
         Delete your comment?
       </button>
     );

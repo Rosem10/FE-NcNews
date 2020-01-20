@@ -17,6 +17,8 @@ class CommentAdder extends Component {
     const { input } = this.state;
     const { articleId, user } = this.props;
 
+  
+
     const requestItem = { username: user, body: input };
 
     api

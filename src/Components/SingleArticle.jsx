@@ -4,8 +4,8 @@ import * as api from "../Api";
 import CommentFetcher from "./CommentFetcher";
 import Loading from "./Loading";
 import Voter from "./Voter";
-
 import ErrorPage from "./ErrorPage";
+import Welcome from "./Welcome"
 export default class SingleArticle extends Component {
   state = {
     article: {},
@@ -37,7 +37,10 @@ export default class SingleArticle extends Component {
       return <ErrorPage err={err} />;
     }
     const capsTopic = article.topic.toUpperCase();
+    const {user} = this.props
     return (
+     <div >
+         <Welcome user={user}/>
       <div className="singleArticle">
         <div className="singleArticleHead">
           {capsTopic}: {article.title}
@@ -55,6 +58,7 @@ export default class SingleArticle extends Component {
             </div>
           </div>
         </div>
+    
 
         <div className="articleBody">{article.body}</div>
         <div className="commentsList">
@@ -63,6 +67,7 @@ export default class SingleArticle extends Component {
             user={this.props.user}
           />
         </div>
+      </div>
       </div>
     );
   }

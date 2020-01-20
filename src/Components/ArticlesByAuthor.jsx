@@ -1,12 +1,22 @@
 import React from "react";
 import ArticlesList from "./ArticlesList";
+import Welcome from "./Welcome";
+import SortArticles from "./SortArticles";
 
 function ArticlesByAuthor(props) {
-  const { author } = props;
+  const { author, user } = props;
 
   return (
     <div>
-      <h2>{`Here's all our articles by ${author}`}</h2>
+      <Welcome className="welcome" user={user} />
+      <div className="articlesSorter">
+        <div className="topicTitle">
+          <h2>{`Here are all our articles by:`}</h2>
+
+          <div className="topicName">{`${author}`}</div>
+        </div>
+      <SortArticles author={author} />
+      </div>
       <ArticlesList author={author} />
     </div>
   );

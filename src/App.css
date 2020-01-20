@@ -20,6 +20,8 @@
   margin: 20px;
   padding: 20px;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
   background-color: #f3d57a;
 }
 
@@ -33,6 +35,8 @@
 .commentBody {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
   padding: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 25px;
@@ -49,15 +53,17 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
   background-image: url("./1343548-most-popular-black-and-white-newspaper-wallpaper-2560x1440-large-resolution.jpg");
 }
-.home {
-  color: white;
-}
+
 .homeArticlesSorter {
   background-color: #facd48;
   border: solid 5px rgb(55, 69, 82);
   margin: 20px;
   width: 100%;
   margin-top: 30px;
+}
+.home {
+  font-size: 50px;
+  color: #facd48;
 }
 .topicTitle {
   background-color: rgb(250, 205, 72, 0.9);
@@ -161,6 +167,7 @@
   justify-content: center;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
   margin: 30px;
+  margin-top: 120px;
 }
 
 .singleArticleHead {
@@ -266,6 +273,11 @@
   font-size: 20px;
 }
 
+.deleteButton {
+  background-color: rgb(55, 69, 82);
+  color: #f3d57a;
+}
+
 .sortForm {
   display: flex;
   flex-direction: row;
@@ -352,18 +364,81 @@ ul {
   font-size: 30px;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 411px) {
   .app {
     display: flex;
     flex-direction: column;
     width: 90%;
     padding: 10px;
   }
-  .singleArticle{
+  .singleArticle {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    padding: 10px;
+    width: 411px;
+  }
+  .singleArticleHead {
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
+  }
+  .commentPoster {
+    width: 60%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .articleCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+    padding-right: 40px;
+  }
+  .commentsList {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(215, 216, 211);
+
+    box-shadow: none;
+
+    align-items: center;
+  }
+  .comments {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .singleVoter {
+    padding: 20px;
+  }
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .sortForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .articlesList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
   }
 }

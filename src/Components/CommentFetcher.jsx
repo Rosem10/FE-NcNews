@@ -20,6 +20,10 @@ class CommentFetcher extends Component {
   }
 
   submitComment = comment => {
+  
+   const created = new Date()
+    comment.created_at = created.toGMTString()
+
     this.setState(currentState => {
       const comments = [comment, ...currentState.comments];
       return { comments };
@@ -44,7 +48,7 @@ class CommentFetcher extends Component {
     return (
       <div>
         <ul>
-          <h2 >Comments: </h2>
+          <h2 className = "comments" >Comments: </h2>
           <CommentAdder
             user={user}
             submitComment={this.submitComment}
