@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import * as api from "./Api";
+import * as api from "../Api";
 import CommentFetcher from "./CommentFetcher";
 import Loading from "./Loading";
 import Voter from "./Voter";
@@ -39,7 +39,7 @@ export default class SingleArticle extends Component {
     const capsTopic = article.topic.toUpperCase();
     return (
       <div className="singleArticle">
-        <p className="singleArticleHead">
+        <div className="singleArticleHead">
           {capsTopic}: {article.title}
           <div className="subtitle">
             <Link to={`/authors/${article.author}`}>
@@ -54,7 +54,7 @@ export default class SingleArticle extends Component {
               />
             </div>
           </div>
-        </p>
+        </div>
 
         <div className="articleBody">{article.body}</div>
         <div className="commentsList">

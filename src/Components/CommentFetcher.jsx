@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as api from "./Api";
+import * as api from "../Api";
 import Loading from "./Loading";
 import CommentCard from "./CommentCard";
 import CommentAdder from "./CommentAdder";

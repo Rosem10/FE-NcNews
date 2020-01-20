@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getTopics } from "./Api";
+import * as api from "../Api";
 import Loading from "./Loading";
 import TopicCard from "./TopicCard";
 
@@ -10,7 +10,7 @@ export default class Nav extends Component {
   };
 
   componentDidMount() {
-    getTopics().then(res =>
+   api.getTopics().then(res =>
       this.setState({ topics: res.data.topics, isLoading: false })
     );
   }

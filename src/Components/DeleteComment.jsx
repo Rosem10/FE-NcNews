@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as api from "./Api";
+import * as api from "../Api";
 
 class DeleteComment extends Component {
   handleClick = event => {
