@@ -6,9 +6,9 @@ function ErrorPage({ err }) {
     const { msg } = err.response.data;
 
     return (
-      <p>
+      <div>
         Oops! {status}: {msg}!
-      </p>
+      </div>
     );
   }
 

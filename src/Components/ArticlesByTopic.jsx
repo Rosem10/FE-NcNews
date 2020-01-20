@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ArticlesList from "./ArticlesList";
 import SortArticles from "./SortArticles";
+import ErrorPage from "./ErrorPage"
+import Welcome from "./Welcome"
 
 export default class ArticlesByTopic extends Component {
   state = {
@@ -16,14 +18,20 @@ export default class ArticlesByTopic extends Component {
     const topicName = topic.toUpperCase();
     const { orderBy } = this.state;
     
+    if(topic !== "cooking" && topic !== "coding" && topic !== "football"){
+      return(<ErrorPage/>)
+    }
+
     return (
+  
       <div>
+        <Welcome className = "welcome" user={user}/>
         <div className="articlesSorter">
           <div className="topicTitle">
-            <h2>{`Here are all our articles on:`}</h2>{" "}
+            <h2>{`Here are all our articles on:`}</h2>
             <div className="topicName">{`${topicName}`}</div>
-          </div>
           <SortArticles topic={topic} OrderArticles={this.OrderArticles} />
+          </div>
         </div>
         <ArticlesList topic={topic} orderBy={orderBy} user={user} />
       </div>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import * as api from "../Api";
 import Loading from "./Loading";
 import TopicCard from "./TopicCard";
+import Home from "./Home"
 
 export default class Nav extends Component {
   state = {
@@ -23,8 +24,9 @@ export default class Nav extends Component {
     }
     return (
       <ul className="nav">
+        <Home/>
         {topics.map(topic => (
-          <TopicCard topic={topic} key={topic.slug} />
+         <TopicCard topic={topic} key={topic.slug}/>
         ))}
       </ul>
     );

@@ -10,6 +10,8 @@ function ArticleCard(props) {
   if (user === article.author) {
     article.author = "you";
   }
+  const created = new Date(article.created_at)
+ 
 
   return (
     <div>
@@ -20,7 +22,7 @@ function ArticleCard(props) {
             {" "}
             <Link className="headLink" to={`/authors/${article.author}`}>
               <h3>
-                Posted by {article.author} at {article.created_at}
+                Posted by {article.author} at {created.toGMTString()}
               </h3>
             </Link>
           </div>

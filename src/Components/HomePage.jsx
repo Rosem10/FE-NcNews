@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ArticlesList from "./ArticlesList";
 import SortArticles from "./SortArticles";
+import Header from "./Header"
+
 
 export default class HomePage extends Component {
   state = {
@@ -15,7 +17,8 @@ export default class HomePage extends Component {
     const {user} = this.props
     return (
       <div className="articlesPage">
-        <div className="articlesSorter">
+        <Header user = {user}/>
+        <div className="homeArticlesSorter">
           <SortArticles OrderArticles={this.OrderArticles}/>
         </div>
         <ArticlesList orderBy={this.state.orderBy} user={user} />

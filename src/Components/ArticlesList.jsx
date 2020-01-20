@@ -32,7 +32,6 @@ class ArticlesList extends Component {
       this.fetchArticles(topic);
     }
     if (orderBy !== prevProps.orderBy) {
-      
       this.fetchArticles(topic, orderBy);
     }
     if (author !== prevProps.author) {
@@ -41,8 +40,8 @@ class ArticlesList extends Component {
   }
 
   render() {
-   const {user} = this.props
-    
+    const { user } = this.props;
+
     if (this.state.isLoading === true) {
       return <Loading />;
     }
@@ -55,7 +54,7 @@ class ArticlesList extends Component {
     return (
       <ul className="articlesList">
         {articles.map(article => (
-          <li className = "articleCard" key={article.article_id}>
+          <li className="articleCard" key={article.article_id}>
             <ArticleCard article={article} user={user} />
           </li>
         ))}
