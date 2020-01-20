@@ -10,7 +10,7 @@ const loggedInUser = "weegembump";
 
 function App() {
   return (
-    <div className="app">
+    <div>
       <Router primary={false}>
         <HomePage path="/" user={loggedInUser} />
         <SingleArticle path="articles/:articleId" user={loggedInUser} />

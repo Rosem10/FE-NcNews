@@ -49,10 +49,10 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
   background-image: url("./1343548-most-popular-black-and-white-newspaper-wallpaper-2560x1440-large-resolution.jpg");
 }
-.home{
+.home {
   color: white;
 }
-.homeArticlesSorter{
+.homeArticlesSorter {
   background-color: #facd48;
   border: solid 5px rgb(55, 69, 82);
   margin: 20px;
@@ -352,14 +352,18 @@ ul {
   font-size: 30px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 400px) {
   .app {
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 90%;
     padding: 10px;
   }
-  .navbar {
-    flex-wrap: wrap;
+  .singleArticle{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
   }
 }
