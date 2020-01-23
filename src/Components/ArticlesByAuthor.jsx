@@ -17,6 +17,7 @@ export default class ArticlesByAuthor extends Component {
     let { author, user } = this.props;
 
     let writer = author;
+
     if (user === author) {
       writer = "You";
     }
@@ -28,13 +29,14 @@ export default class ArticlesByAuthor extends Component {
           <div className="topicTitle">
             <h2>{`Here are all our articles by:`}</h2>
             <div className="topicName">{`${writer}`}</div>
+            <SortArticles
+              author={author}
+              user={user}
+              orderArticles={this.orderArticles}
+            />
           </div>
-          <SortArticles
-            author={author}
-            user={user}
-            orderArticles={this.orderArticles}
-          />
         </div>
+
         <ArticlesList author={author} user={user} orderBy={orderBy} />
       </div>
     );
