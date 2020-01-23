@@ -1,7 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
 
-
 function Welcome(props) {
   const { user } = props;
 
@@ -12,7 +11,7 @@ function Welcome(props) {
           {`Welcome,`} <div id="username">{`${user}!`}</div>
         </h2>
       </div>
-      <Nav className="nav" />
+      <Nav className="nav" user={user}/>
     </div>
   );
 }

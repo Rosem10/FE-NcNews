@@ -4,8 +4,8 @@ import Voter from "./Voter";
 
 function CommentCard(props) {
   const { comment, user, removeComment, articleId } = props;
-  const commentDate = new Date(comment.created_at)
-  const formattedDate = commentDate.toGMTString()
+  const commentDate = new Date(comment.created_at);
+  const formattedDate = commentDate.toGMTString();
 
   return (
     <div>
@@ -24,14 +24,16 @@ function CommentCard(props) {
           />
         </div>
       </main>
-      <div>{user === comment.author && (
-       <DeleteComment
-          articleId={articleId}
-          commentId={comment.comment_id}
-          removeComment={removeComment}
-        />
-      )}
-    </div></div>
+      <div>
+        {user === comment.author && (
+          <DeleteComment
+            articleId={articleId}
+            commentId={comment.comment_id}
+            removeComment={removeComment}
+          />
+        )}
+      </div>
+    </div>
   );
 }
 

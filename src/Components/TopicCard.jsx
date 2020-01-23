@@ -5,7 +5,9 @@ function TopicCard(props) {
   const { topic } = props;
   return (
     <li key={topic.slug}>
-      <Link to={`/topics/${topic.slug}`} id="topic">{topic.slug}</Link>
+      <Link to={`/topics/${topic.slug}`} id="topic">
+        {topic.slug}
+      </Link>
     </li>
   );
 }

@@ -1,20 +1,20 @@
-import React, { Component } from "react";
 import * as api from "../Api";
+import React from "react";
 
-class DeleteComment extends Component {
-  handleClick = event => {
-    const { commentId } = this.props;
-    this.props.removeComment(commentId);
-    api.removeComment(commentId);
-  };
-
-  render() {
-    const { id } = this.props;
-    return (
-      <button className = "deleteButton" id={id} onClick={this.handleClick}>
-        Delete your comment?
-      </button>
-    );
-  }
+function handleClick(props) {
+  const { commentId, removeComment } = props;
+  removeComment(commentId);
+  api.removeComment(commentId).catch(err => {
+    return <h3>Unable to remove this comment!</h3>;
+  });
 }
+
+function DeleteComment(props) {
+  return (
+    <button className="deleteButton" onClick={() => handleClick(props)}>
+      Delete your comment?
+    </button>
+  );
+}
+
 export default DeleteComment;

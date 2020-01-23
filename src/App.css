@@ -13,8 +13,11 @@
 .cardBody {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
+  
 }
+
+
 .commentCard {
   border: solid 5px rgb(55, 69, 82);
   margin: 20px;
@@ -82,6 +85,11 @@
   padding-left: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+.articleComments{
+  padding-left: 20px;
+  font-weight: bold;
+ margin-top: 0px;
+}
 .articleCard {
   background-color: rgb(215, 216, 211);
   display: flex;
@@ -105,17 +113,26 @@
   width: 5%;
 }
 
-.cardHead {
+.cardHead{
   display: flex;
   flex-direction: row;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-left: 20px;
   margin: 0px;
   color: rgba(55, 69, 82, 0.548);
+  width: 100%;
+
 }
 
 .articleDetails {
   margin-left: 20px;
   margin-top: 10px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: row;
   align-items: space-between;
@@ -200,6 +217,8 @@
   align-items: center;
 }
 
+
+
 .vn {
   display: flex;
   flex-direction: row;
@@ -231,6 +250,8 @@
   font-family: "Fugaz One", cursive;
   color: rgb(55, 69, 82);
   font-size: 25px;
+  width: 100%;
+  height: 20px;
 }
 .cardLink {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -243,9 +264,11 @@
 }
 
 .headLink {
-  text-decoration: none;
   padding-right: 10px;
   color: rgba(55, 69, 82, 0.548);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+
 }
 .voter {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -253,7 +276,10 @@
   flex-direction: row;
   margin: 20px;
   color: rgb(55, 69, 82);
-  height: auto;
+  height: 20px;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 15px;
 }
 
 .body {
@@ -284,10 +310,35 @@
   justify-content: space-between;
   padding: 10px;
 }
+
+#error{
+  font-family: "Fugaz one";
+  font-size: 60px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.loading{
+  font-family: "Fugaz one";
+  font-size: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.errorPage{
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
 .header {
   background-image: url("./1343548-most-popular-black-and-white-newspaper-wallpaper-2560x1440-large-resolution.jpg");
   color: #facd48;
-  height: 800px;
+  height: 600px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -347,6 +398,23 @@
 ul {
   list-style: none;
 }
+.voteSetup{
+  width: 30px;
+}
+
+.thanks{
+  font-size: 15px;
+  color: maroon;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+
+.topicLoading{
+  padding: auto;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .welcome {
   font-size: 15px;
   margin: 0px;
@@ -392,9 +460,9 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 40px;
-    padding-right: 40px;
+
   }
+
   .commentsList {
     width: 90%;
     display: flex;

@@ -1,25 +1,24 @@
 import React, { Component } from "react";
 import ArticlesList from "./ArticlesList";
 import SortArticles from "./SortArticles";
-import Header from "./Header"
-
+import Header from "./Header";
 
 export default class HomePage extends Component {
   state = {
     orderBy: null
   };
 
-  OrderArticles = orderBy => {
+  orderArticles = orderBy => {
     this.setState({ orderBy });
   };
 
   render() {
-    const {user} = this.props
+    const { user } = this.props;
     return (
       <div className="articlesPage">
-        <Header user = {user}/>
+        <Header user={user} />
         <div className="homeArticlesSorter">
-          <SortArticles OrderArticles={this.OrderArticles}/>
+          <SortArticles orderArticles={this.orderArticles} />
         </div>
         <ArticlesList orderBy={this.state.orderBy} user={user} />
       </div>

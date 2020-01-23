@@ -41,13 +41,13 @@ class ArticlesList extends Component {
 
   render() {
     const { user } = this.props;
+    const { isLoading, hasError, err } = this.state;
 
-    if (this.state.isLoading === true) {
-      return <Loading />;
+    if (isLoading) {
+      return <Loading user={user} />;
     }
-    if (this.state.hasError === true) {
-      const { err } = this.state;
-      return <ErrorPage err={err} />;
+    if (hasError) {
+      return <ErrorPage err={err} user={user} />;
     }
 
     const { articles } = this.state;

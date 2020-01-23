@@ -1,25 +1,42 @@
-import React from "react";
 import ArticlesList from "./ArticlesList";
 import Welcome from "./Welcome";
 import SortArticles from "./SortArticles";
+import React, { Component } from "react";
 
-function ArticlesByAuthor(props) {
-  const { author, user } = props;
+export default class ArticlesByAuthor extends Component {
+  state = {
+    orderBy: null
+  };
 
-  return (
-    <div>
-      <Welcome className="welcome" user={user} />
-      <div className="articlesSorter">
-        <div className="topicTitle">
-          <h2>{`Here are all our articles by:`}</h2>
+  orderArticles = orderBy => {
+    this.setState({ orderBy });
+  };
 
-          <div className="topicName">{`${author}`}</div>
+  render() {
+    const { orderBy } = this.state;
+    let { author, user } = this.props;
+
+    let writer = author;
+    if (user === author) {
+      writer = "You";
+    }
+    return (
+      <div>
+        <Welcome className="welcome" user={user} />
+
+        <div className="articlesSorter">
+          <div className="topicTitle">
+            <h2>{`Here are all our articles by:`}</h2>
+            <div className="topicName">{`${writer}`}</div>
+          </div>
+          <SortArticles
+            author={author}
+            user={user}
+            orderArticles={this.orderArticles}
+          />
         </div>
-      <SortArticles author={author} />
+        <ArticlesList author={author} user={user} orderBy={orderBy} />
       </div>
-      <ArticlesList author={author} />
-    </div>
-  );
+    );
+  }
 }
-
-export default ArticlesByAuthor;

@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import * as api from "../Api";
-import Loading from "./Loading";
 import TopicCard from "./TopicCard";
-import Home from "./Home"
-
+import Home from "./Home";
+import ErrorPage from "./ErrorPage";
 
 export default class Nav extends Component {
   state = {
     topics: [],
-    isLoading: true
+    isLoading: true,
+    hasError: false,
+    err: null
   };
 
   componentDidMount() {
     api
       .getTopics()
-      .then(res =>
-        this.setState({ topics: res.data.topics, isLoading: false })
-      );
+      .then(res => this.setState({ topics: res.data.topics, isLoading: false }))
+      .catch(err => this.setState({ hasError: true, isLoading: false, err }));
   }
 
   render() {
-    const { topics } = this.state;
+    const { topics, err, isLoading } = this.state;
+    const { user } = this.props;
 
-    if (this.state.isLoading === true) {
-      return <Loading />;
+    if (isLoading) {
+      return <p className="topicLoading">Loading</p>;
+    }
+    if (err) {
+      return <ErrorPage err={err} user={user} />;
     }
     return (
       <ul className="nav">
-            <Home />
+        <Home />
         {topics.map(topic => (
           <TopicCard topic={topic} key={topic.slug} />
         ))}

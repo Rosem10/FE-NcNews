@@ -16,7 +16,7 @@ function App() {
         <SingleArticle path="articles/:articleId" user={loggedInUser} />
         <ArticlesByTopic path="topics/:topic" user={loggedInUser} />
         <ArticlesByAuthor path="authors/:author" user={loggedInUser} />
-        <ErrorPage default status={404} msg={"That page doesn't exist!"} />
+        <ErrorPage default status={404} msg={"That page doesn't exist!"} user={loggedInUser} />
       </Router>
     </div>
   );

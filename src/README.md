@@ -1,6 +1,6 @@
 # Northcoders News
 
-Northcoders News is a social news aggregation, web content rating, and discussion website, not dissimilar [Reddit](https://www.reddit.com/).
+Northcoders News is a social news aggregation, web content rating, and discussion website, not dissimilar to[Reddit](https://www.reddit.com/).
 
 Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
@@ -17,6 +17,7 @@ v12.10.0
 #### To run:
 
 Git clone the following link: https://github.com/Rosem10/FE-NcNews.git
+cd FE-NcNews
 npm i
 npm start
 You will be logged in as default user "weegembump"

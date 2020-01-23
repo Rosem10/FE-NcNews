@@ -1,18 +1,28 @@
 import React from "react";
+import Welcome from "./Welcome";
 
-function ErrorPage({ err }) {
+function ErrorPage({ err, user }) {
   if (err) {
     const { status } = err.response;
     const { msg } = err.response.data;
 
     return (
       <div>
-        Oops! {status}: {msg}!
+        <Welcome user={user} />
+        <p id="error">
+          {" "}
+          Oops! {status}: {msg}!
+        </p>
       </div>
     );
   }
 
-  return <p>Oops! 404: Page not found!</p>;
+  return (
+    <div className="errorPage">
+      <Welcome user={user} />
+      <p id="error">Oops! 404: Page not found!</p>
+    </div>
+  );
 }
 
 export default ErrorPage;

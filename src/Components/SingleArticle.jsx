@@ -5,7 +5,7 @@ import CommentFetcher from "./CommentFetcher";
 import Loading from "./Loading";
 import Voter from "./Voter";
 import ErrorPage from "./ErrorPage";
-import Welcome from "./Welcome"
+import Welcome from "./Welcome";
 export default class SingleArticle extends Component {
   state = {
     article: {},
@@ -23,51 +23,41 @@ export default class SingleArticle extends Component {
   }
 
   render() {
-    if (this.state.isLoading === true) {
-      return <Loading />;
+    const { isLoading, article, hasError, err } = this.state;
+    const { user } = this.props;
+    if (isLoading) {
+      return <Loading user={user}/>;
     }
-
-    const { article } = this.state;
-
-    if (this.state.isLoading === true) {
-      return <Loading />;
-    }
-    if (this.state.hasError === true) {
-      const { err } = this.state;
-      return <ErrorPage err={err} />;
+    if (hasError) {
+      return <ErrorPage err={err} user={user} />;
     }
     const capsTopic = article.topic.toUpperCase();
-    const {user} = this.props
     return (
-     <div >
-         <Welcome user={user}/>
-      <div className="singleArticle">
-        <div className="singleArticleHead">
-          {capsTopic}: {article.title}
-          <div className="subtitle">
-            <Link to={`/authors/${article.author}`}>
-              <p className="authorLink">{article.author}</p>
-            </Link>
+      <div>
+        <Welcome user={user} />
+        <div className="singleArticle">
+          <div className="singleArticleHead">
+            {capsTopic}: {article.title}
+            <div className="subtitle">
+              <Link to={`/authors/${article.author}`}>
+                <p className="authorLink">{article.author}</p>
+              </Link>
 
-            <div id="singleVoter">
-              <Voter
-                votes={article.votes}
-                id={article.article_id}
-                criteria={"articles"}
-              />
+              <div id="singleVoter">
+                <Voter
+                  votes={article.votes}
+                  id={article.article_id}
+                  criteria={"articles"}
+                />
+              </div>
             </div>
           </div>
-        </div>
-    
 
-        <div className="articleBody">{article.body}</div>
-        <div className="commentsList">
-          <CommentFetcher
-            articleId={article.article_id}
-            user={this.props.user}
-          />
+          <div className="articleBody">{article.body}</div>
+          <div className="commentsList">
+            <CommentFetcher articleId={article.article_id} user={user} />
+          </div>
         </div>
-      </div>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class SortArticles extends Component {
   handleChange = event => {
-    this.props.OrderArticles(event.target.value);
+    this.props.orderArticles(event.target.value);
   };
 
   render() {
