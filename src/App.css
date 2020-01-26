@@ -89,7 +89,6 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .articleComments {
-  padding-left: 20px;
   font-weight: bold;
   margin-top: 0px;
 }
@@ -131,7 +130,7 @@
 }
 
 .articleDetails {
-  margin-left: 20px;
+  margin-left: 20%;
   margin-top: 10px;
   padding-bottom: 20px;
   display: flex;
@@ -259,13 +258,12 @@
   font-family: "Fugaz One", cursive;
   color: rgb(55, 69, 82);
   font-size: 25px;
-  width: 100%;
+  width: 50%;
   height: 20px;
 }
 .cardLink {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding-left: 10px;
-  margin: 10px;
+
   font-size: 30px;
   color: rgb(55, 69, 82);
   text-decoration: underline;
@@ -282,12 +280,11 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: row;
-  margin: 20px;
+  margin: 9%;
   color: rgb(55, 69, 82);
   height: 20px;
-  width: 100%;
-  justify-content: flex-end;
-  padding: 15px;
+  width: 30%;
+  justify-content: flex-start;
 }
 
 .body {
@@ -540,7 +537,7 @@ ul {
     padding: 0%;
     background-color: white;
   }
-
+  
   .singleVoter {
     padding: 20px;
   }
@@ -643,11 +640,15 @@ ul {
   .vn {
     margin: 0px;
   }
-  .commentFooter{
+  .commentFooter {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
     width: 80%;
+  }
+  #articleDetails {
+    display: flex;
+    flex-direction: column;
   }
 }

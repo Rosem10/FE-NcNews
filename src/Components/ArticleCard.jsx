@@ -32,8 +32,8 @@ function ArticleCard(props) {
         </Link>
       </div>
 
-      <div className="articleDetails">
-        {" "}
+      <div id="articleDetails">
+    
         Posted by:
         <Link className="headLink" to={`/authors/${article.author}`}>
           {article.author}
