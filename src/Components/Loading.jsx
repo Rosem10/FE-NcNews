@@ -2,12 +2,11 @@ import React from "react";
 import Welcome from "./Welcome";
 
 function Loading(props) {
-  const {user} = props
-  console.log(user)
+  const { user } = props;
 
   return (
     <div>
-      <Welcome user ={user}/>
+      <Welcome user={user} />
       <h2 className="loading">{"Loading..."}</h2>
     </div>
   );

@@ -32,9 +32,11 @@ export default class Nav extends Component {
     return (
       <ul className="nav">
         <Home />
+        <div className = "topics">
         {topics.map(topic => (
           <TopicCard topic={topic} key={topic.slug} />
         ))}
+        </div>
       </ul>
     );
   }

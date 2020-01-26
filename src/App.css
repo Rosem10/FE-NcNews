@@ -1,7 +1,3 @@
-.commentVoter {
-  display: flex;
-  flex-direction: column;
-}
 .articlesPage {
   display: flex;
   flex-direction: column;
@@ -10,13 +6,14 @@
   align-items: center;
 }
 
+.articlesList {
+  padding: 1%;
+}
 .cardBody {
   display: flex;
   flex-direction: row;
   width: 80%;
-  
 }
-
 
 .commentCard {
   border: solid 5px rgb(55, 69, 82);
@@ -25,7 +22,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  background-color: #f3d57a;
+  background-color: rgba(204, 203, 203, 0.548);
 }
 
 .commentHeader {
@@ -47,7 +44,7 @@
 .articlesSorter {
   padding: 20px;
   margin: 30px;
-  margin-top: 120px;
+  margin-top: 150px;
   margin-bottom: 50px;
   border-radius: 20px;
   flex-direction: row;
@@ -67,12 +64,18 @@
 .home {
   font-size: 50px;
   color: #facd48;
+  margin-top: 0%;
+
+  margin-right: 1%;
 }
 .topicTitle {
   background-color: rgb(250, 205, 72, 0.9);
   border-radius: 20px;
 }
-
+.topicCard {
+  margin-left: 5%;
+  margin-right: 5%;
+}
 .sortTitle {
   font-weight: bold;
 }
@@ -85,10 +88,10 @@
   padding-left: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.articleComments{
+.articleComments {
   padding-left: 20px;
   font-weight: bold;
- margin-top: 0px;
+  margin-top: 0px;
 }
 .articleCard {
   background-color: rgb(215, 216, 211);
@@ -98,7 +101,6 @@
   margin-left: 50px;
   margin-right: 10px;
   margin-bottom: 40px;
-
   border: solid 3px rgb(55, 69, 82);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -113,7 +115,7 @@
   width: 5%;
 }
 
-.cardHead{
+.cardHead {
   display: flex;
   flex-direction: row;
 }
@@ -126,7 +128,6 @@
   margin: 0px;
   color: rgba(55, 69, 82, 0.548);
   width: 100%;
-
 }
 
 .articleDetails {
@@ -158,7 +159,7 @@
 }
 
 .commentPoster {
-  background-color: lightgoldenrodyellow;
+  background-color: #f5d470;
   margin: 20px;
   padding: 20px;
   border: solid 3px rgb(55, 69, 82);
@@ -169,6 +170,15 @@
 .commentAdder {
   height: 50px;
   width: 100%;
+  border: solid 2px gray;
+}
+#postCommentButton {
+  background-color: lightgray;
+  border: solid 1px grey;
+  margin-top: 2%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-radius: 10px;
+  height: 300%;
 }
 #singleVoter {
   padding-left: 30px;
@@ -184,7 +194,7 @@
   justify-content: center;
   box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.5);
   margin: 30px;
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 .singleArticleHead {
@@ -192,7 +202,8 @@
   font-size: 60px;
   padding-left: 20px;
   background-color: #facd48;
-  margin: 0px;
+
+  padding: 20px;
 }
 .articleBody {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -206,7 +217,7 @@
 .subtitle {
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
+
   font-family: "Fugaz One";
 }
 .commentsList {
@@ -217,8 +228,6 @@
   align-items: center;
 }
 
-
-
 .vn {
   display: flex;
   flex-direction: row;
@@ -227,7 +236,7 @@
 }
 .topicTitle {
   color: #374552;
-  font-size: 20px;
+  font-size: 80%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -266,9 +275,8 @@
 .headLink {
   padding-right: 10px;
   color: rgba(55, 69, 82, 0.548);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: bold;
-
 }
 .voter {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -300,8 +308,11 @@
 }
 
 .deleteButton {
-  background-color: rgb(55, 69, 82);
-  color: #f3d57a;
+  background-color: #facd48;
+  border: solid 1px gray;
+  border-radius: 20px;
+  color: rgba(55, 69, 82);
+  font-weight: bold;
 }
 
 .sortForm {
@@ -311,17 +322,16 @@
   padding: 10px;
 }
 
-#error{
+#error {
   font-family: "Fugaz one";
   font-size: 60px;
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
 
-.loading{
+.loading {
   font-family: "Fugaz one";
   font-size: 30px;
   align-items: center;
@@ -330,7 +340,7 @@
   justify-content: center;
 }
 
-.errorPage{
+.errorPage {
   display: flex;
   flex-direction: column;
   margin-top: 200px;
@@ -368,7 +378,6 @@
   flex-direction: row;
   background-color: rgb(55, 69, 82);
   color: #facd48;
-  align-items: space-around;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
@@ -392,65 +401,76 @@
   align-items: flex-start;
   width: 50%;
   justify-content: space-between;
-  margin-right: 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-right: 5%;
+}
+.topics {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
 }
 ul {
   list-style: none;
 }
-.voteSetup{
+.voteSetup {
   width: 30px;
 }
 
-.thanks{
+.thanks {
   font-size: 15px;
   color: maroon;
   font-style: italic;
   margin-right: 10px;
 }
 
-
-.topicLoading{
+#topicLoading {
   padding: auto;
   font-size: 20px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .welcome {
-  font-size: 15px;
   margin: 0px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 70%;
   padding-left: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+.welcomeString {
+  margin-bottom: 0px;
+}
+
 #username {
-  padding: 0px;
-  margin: 0px;
   font-style: italic;
-  font-size: 30px;
+  font-size: 300%;
+  font-family: "fugaz one";
+  margin-top: none;
 }
 
 @media screen and (max-width: 411px) {
   .app {
     display: flex;
     flex-direction: column;
-    width: 90%;
-    padding: 10px;
+    width: auto;
+
+    margin: 0px;
   }
   .singleArticle {
     display: flex;
     flex-direction: column;
-    width: 411px;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+    margin: 0px;
   }
   .singleArticleHead {
     display: flex;
     flex-direction: column;
-    font-size: 20px;
+    font-size: 120%;
+    margin: 3%;
   }
   .commentPoster {
-    width: 60%;
     margin: 20px;
     display: flex;
     flex-direction: column;
@@ -460,24 +480,65 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0%;
+    margin-bottom: 10%;
+    box-shadow: none;
+  }
 
+  .articleMain {
+    font-size: 100%;
+    background-color: beige;
+    border: solid 1px lightgray;
+  }
+  .articleBody {
+    font-size: 100%;
+    padding: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .authorLink {
+    font-size: 80%;
   }
 
   .commentsList {
-    width: 90%;
+    font-family: "fugaz one";
+    font-size: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: rgb(215, 216, 211);
-
+    background-color: white;
     box-shadow: none;
-
     align-items: center;
   }
+  .commentBody {
+    display: flex;
+    flex-direction: column;
+  }
+  .form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .commentPoster {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 80%;
+    padding: 3%;
+    margin: 3%;
+
+    width: 85%;
+  }
+  .poster {
+    margin-top: 0%;
+    margin-bottom: 3%;
+  }
   .comments {
-    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 130%;
+    padding: 0%;
+    background-color: white;
   }
 
   .singleVoter {
@@ -488,12 +549,62 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: none;
+    height: auto;
+  }
+  .title {
+    box-shadow: none;
+    margin: 4%;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  #link {
+    font-size: 200%;
   }
   .navBar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: none;
     justify-content: center;
+    height: 40%;
+    position: static;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding: 0px;
+    margin: 4%;
+  }
+  .homeArticlesSorter {
+    width: 95%;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+    margin: 0px;
+    padding-top: 10%;
+    justify-content: center;
+    font-size: 60%;
+    padding-top: 0%;
+    height: auto;
+  }
+
+  .topics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0%;
+  }
+  .topicName {
+    padding-bottom: 0%;
   }
   .sortForm {
     display: flex;
@@ -507,6 +618,36 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
+    padding: 0%;
+  }
+
+  .sortForm {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .articlesSorter {
+    margin-top: 30px;
+  }
+  .commentHeader {
+    display: flex;
+    flex-direction: column;
+  }
+  .headerInfo {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 100%;
+  }
+  .vn {
+    margin: 0px;
+  }
+  .commentFooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    width: 80%;
   }
 }

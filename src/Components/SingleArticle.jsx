@@ -36,13 +36,13 @@ export default class SingleArticle extends Component {
       <div>
         <Welcome user={user} />
         <div className="singleArticle">
+          <div className = "articleMain">
           <div className="singleArticleHead">
             {capsTopic}: {article.title}
             <div className="subtitle">
               <Link to={`/authors/${article.author}`}>
                 <p className="authorLink">{article.author}</p>
               </Link>
-
               <div id="singleVoter">
                 <Voter
                   votes={article.votes}
@@ -54,6 +54,7 @@ export default class SingleArticle extends Component {
           </div>
 
           <div className="articleBody">{article.body}</div>
+          </div>
           <div className="commentsList">
             <CommentFetcher articleId={article.article_id} user={user} />
           </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import * as api from "../Api";
-import Loading from "./Loading";
+
 import ErrorPage from "./ErrorPage";
 
 class ArticlesList extends Component {
@@ -41,11 +41,8 @@ class ArticlesList extends Component {
 
   render() {
     const { user } = this.props;
-    const { isLoading, hasError, err } = this.state;
+    const { hasError, err } = this.state;
 
-    if (isLoading) {
-      return <Loading user={user} />;
-    }
     if (hasError) {
       return <ErrorPage err={err} user={user} />;
     }

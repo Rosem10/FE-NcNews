@@ -18,7 +18,7 @@ class CommentAdder extends Component {
     const { input } = this.state;
     const { articleId, user, submitComment } = this.props;
     const requestItem = { username: user, body: input };
-    this.setState({input: ""})
+    
 
     api
       .postComment(articleId, requestItem)
@@ -41,7 +41,7 @@ class CommentAdder extends Component {
         onSubmit={this.handleSubmit}
       >
         <p>Add Comment: </p>
-        <h2>{`Posting as ${user} `} </h2>
+        <h2 className = "poster">{`Posting as ${user} `} </h2>
         <input
           required
           type="text"

@@ -10,21 +10,11 @@ function CommentCard(props) {
   return (
     <div>
       <header className="commentHeader">
-        <h3>By: {comment.author}</h3>
-        <h3>{formattedDate}</h3>
+        <h3 className="headerInfo">By: {comment.author}</h3>
+        <h3 className="headerInfo">{formattedDate}</h3>
       </header>
-      <main className="commentBody">
-        {comment.body}{" "}
-        <div className="commentVoter">
-          {" "}
-          <Voter
-            criteria={"comments"}
-            votes={comment.votes}
-            id={comment.comment_id}
-          />
-        </div>
-      </main>
-      <div>
+      <main className="commentBody">{comment.body} </main>
+      <div className="commentFooter">
         {user === comment.author && (
           <DeleteComment
             articleId={articleId}
@@ -32,6 +22,11 @@ function CommentCard(props) {
             removeComment={removeComment}
           />
         )}
+        <Voter
+          criteria={"comments"}
+          votes={comment.votes}
+          id={comment.comment_id}
+        />
       </div>
     </div>
   );

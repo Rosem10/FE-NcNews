@@ -55,7 +55,7 @@ class CommentFetcher extends Component {
 
     return (
       <div>
-        <ul>
+        <ul className = "comments">
           <h2 className="comments">Comments: </h2>
           <CommentAdder
             user={user}

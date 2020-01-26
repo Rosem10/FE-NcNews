@@ -7,11 +7,10 @@ function Welcome(props) {
   return (
     <div className="navBar">
       <div className="welcome">
-        <h2>
-          {`Welcome,`} <div id="username">{`${user}!`}</div>
-        </h2>
+        <h2 className="welcomeString">{`Welcome, `} </h2>
+        <div id="username">{`${user}!`}</div>
       </div>
-      <Nav className="nav" user={user}/>
+      <Nav className="nav" user={user} />
     </div>
   );
 }

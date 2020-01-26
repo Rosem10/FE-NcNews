@@ -26,7 +26,8 @@ class Voter extends Component {
 
     return (
       <div className = "voteSetup">
-          <form className = "form">
+         <form className = "form">
+           <div id className="form">
             <button
               className="button"
               onClick={() => this.handleClick(1)}
@@ -42,10 +43,11 @@ class Voter extends Component {
             >
               <span> ▽</span>
             </button>
+            </div>
           </form>
           <div className = "thanksParent">
-          {this.state.voted ? <h3 className = "thanks">Thanks for voting!</h3> : null}
         </div>
+          {this.state.voted ? <h3 className = "thanks">Thanks for voting!</h3> : null}
         </div>
       
     );

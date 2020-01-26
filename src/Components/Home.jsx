@@ -5,7 +5,7 @@ function Home() {
   return (
     <Link to="/" className="home">
       <div className="home">
-        <i class="fas fa-home"></i>
+        <i className="fas fa-home"></i>
       </div>
     </Link>
   );
