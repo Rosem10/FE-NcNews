@@ -419,7 +419,10 @@ ul {
   font-style: italic;
   margin-right: 10px;
 }
-
+.voteSetup{
+  width: 100%;
+  align-content: center;
+}
 #topicLoading {
   padding: auto;
   font-size: 20px;
@@ -537,7 +540,7 @@ ul {
     padding: 0%;
     background-color: white;
   }
-  
+
   .singleVoter {
     padding: 20px;
   }
