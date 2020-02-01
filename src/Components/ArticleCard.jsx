@@ -7,41 +7,43 @@ function ArticleCard(props) {
   const capsArticle = article.topic.toUpperCase();
   let { user } = props;
 
+  let author = article.author
   if (user === article.author) {
-    article.author = "you";
+    author = "you";
   }
   const created = new Date(article.created_at);
 
 
   return (
+    <div className = "articleCardMain">
     <div className="cardContent">
-      <div className="cardHead">
         <h3 className="headTopic">{capsArticle}</h3>
-        <div className="voter">
-          <Voter
-            votes={article.votes}
-            id={article.article_id}
-            criteria={"articles"}
-          />
-        </div>
-      </div>
 
       <div className="cardBody">
         <Link to={`/articles/${article.article_id}`}>
           <h2 className="cardLink">{article.title}</h2>
         </Link>
       </div>
-
+  
       <div id="articleDetails">
     
-        Posted by:
+        Posted by:{" "}
         <Link className="headLink" to={`/authors/${article.author}`}>
-          {article.author}
+          {author}
         </Link>
-        at {created.toGMTString()}
+        <br/>
+        {created.toGMTString()}
       </div>
       <p className="articleComments">Comments: {article.comment_count}</p>
-    </div>
+      </div>
+        <div className="voter">
+          <Voter
+            votes={article.votes}
+            id={article.article_id}
+            criteria={"articles"}
+          />
+      </div>
+</div>
   );
 }
 

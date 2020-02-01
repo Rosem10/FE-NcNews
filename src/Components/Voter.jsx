@@ -23,33 +23,30 @@ class Voter extends Component {
     if (voted === true) {
       votes += increment;
     }
-
+    
     return (
-      <div className = "voteSetup">
-         <form className = "form">
-           <div id className="form">
-            <button
-              className="button"
-              onClick={() => this.handleClick(1)}
-              disabled={voted}
-            >
-              <span>△</span>
-            </button>
-            <h2 className="vn">{votes}</h2>
-            <button
-              className="button"
-              onClick={() => this.handleClick(-1)}
-              disabled={voted}
-            >
-              <span> ▽</span>
-            </button>
-            </div>
-          </form>
-          <div className = "thanksParent">
-        </div>
-          {this.state.voted ? <h3 className = "thanks">Thanks for voting!</h3> : null}
-        </div>
-      
+      <div className = "formContainer">
+        {this.state.voted ? (
+          <h3 className="thanks">Thanks for voting!</h3>
+        ) : null}
+        <form className="form">
+          <button
+            className="button"
+            onClick={() => this.handleClick(1)}
+            disabled={voted}
+          >
+            <span>△</span>
+          </button>
+          <h2 className="vn">{votes}</h2>
+          <button
+            className="button"
+            onClick={() => this.handleClick(-1)}
+            disabled={voted}
+          >
+            <span> ▽</span>
+          </button>
+        </form>
+      </div>
     );
   }
 }

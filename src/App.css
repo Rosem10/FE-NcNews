@@ -8,6 +8,9 @@
 
 .articlesList {
   padding: 1%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cardBody {
   display: flex;
@@ -29,14 +32,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
   font-family: "Fugaz one";
 }
 .commentBody {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 10px;
   padding: 20px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 25px;
@@ -44,8 +45,8 @@
 .articlesSorter {
   padding: 20px;
   margin: 30px;
-  margin-top: 150px;
-  margin-bottom: 50px;
+  margin-top: 120px;
+  margin-bottom: 30px;
   border-radius: 20px;
   flex-direction: row;
   width: auto;
@@ -65,17 +66,16 @@
   font-size: 50px;
   color: #facd48;
   margin-top: 0%;
-
+  margin-left: 0%;
   margin-right: 1%;
+  justify-content: flex-start;
 }
 .topicTitle {
   background-color: rgb(250, 205, 72, 0.9);
   border-radius: 20px;
+  width: 100%;
 }
-.topicCard {
-  margin-left: 5%;
-  margin-right: 5%;
-}
+
 .sortTitle {
   font-weight: bold;
 }
@@ -92,14 +92,23 @@
   font-weight: bold;
   margin-top: 0px;
 }
+.articleMain {
+  display: flex;
+  flex-direction: column;
+}
+.articleCardMain {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-right: 3%;
+}
+
 .articleCard {
   background-color: rgb(215, 216, 211);
   display: flex;
   flex-direction: row;
   width: 90%;
-  margin-left: 50px;
-  margin-right: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   border: solid 3px rgb(55, 69, 82);
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
@@ -108,7 +117,7 @@
 .voteCount {
   background-color: rgb(55, 69, 82);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: flex-end;
   width: 5%;
@@ -117,6 +126,7 @@
 .cardHead {
   display: flex;
   flex-direction: row;
+  align-items: flex-end;
 }
 
 .cardContent {
@@ -144,7 +154,7 @@
 }
 #singleVoter .vn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px;
   align-items: center;
   justify-content: center;
@@ -152,6 +162,11 @@
   margin-top: -20px;
   margin-bottom: -20px;
 }
+.formContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .commentsTitle {
   font-family: "Fugaz one";
   font-size: 40px;
@@ -230,8 +245,7 @@
 .vn {
   display: flex;
   flex-direction: row;
-  padding-right: 5px;
-  padding-left: 5px;
+  justify-content: center;
 }
 .topicTitle {
   color: #374552;
@@ -258,8 +272,8 @@
   font-family: "Fugaz One", cursive;
   color: rgb(55, 69, 82);
   font-size: 25px;
-  width: 50%;
   height: 20px;
+  width: 80%;
 }
 .cardLink {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -280,11 +294,16 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: row;
-  margin: 9%;
   color: rgb(55, 69, 82);
   height: 20px;
-  width: 30%;
-  justify-content: flex-start;
+  padding-top: 2%;
+  width: auto;
+}
+.commentFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .body {
@@ -310,6 +329,7 @@
   border-radius: 20px;
   color: rgba(55, 69, 82);
   font-weight: bold;
+  margin-left: 3%;
 }
 
 .sortForm {
@@ -326,6 +346,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  padding-top: 30%;
 }
 
 .loading {
@@ -345,7 +366,7 @@
 .header {
   background-image: url("./1343548-most-popular-black-and-white-newspaper-wallpaper-2560x1440-large-resolution.jpg");
   color: #facd48;
-  height: 600px;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -354,19 +375,26 @@
 
 #link {
   color: black;
-  font-size: 100px;
+  font-size: 400%;
   text-decoration: none;
-  padding: 20px;
-  font-family: "Fugaz One", cursive;
+  padding: 5%;
+  font-family: "Fugaz One";
+  justify-content: center;
 }
 
 .title {
   background-color: rgb(250, 205, 72, 0.9);
-  padding: 20px;
+  padding: auto;
   margin: auto;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   font-weight: bold;
+  letter-spacing: 8px;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -395,16 +423,17 @@
   display: flex;
   list-style: none;
   flex-direction: row-reverse;
-  align-items: flex-start;
-  width: 50%;
+  align-items: space-between;
+  width: 40%;
   justify-content: space-between;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  margin-right: 5%;
+  padding-right: 2%;
 }
 .topics {
   display: flex;
   flex-direction: row;
-  width: 75%;
+  width: 100%;
+  justify-content: space-evenly;
 }
 ul {
   list-style: none;
@@ -417,12 +446,11 @@ ul {
   font-size: 15px;
   color: maroon;
   font-style: italic;
-  margin-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5%;
 }
-.voteSetup{
-  width: 100%;
-  align-content: center;
-}
+
 #topicLoading {
   padding: auto;
   font-size: 20px;
@@ -432,13 +460,14 @@ ul {
   margin: 0px;
   display: flex;
   flex-direction: column;
+  font-size: 70%;
   width: 70%;
   padding-left: 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .welcomeString {
-  margin-bottom: 0px;
+  margin-bottom: -10px;
 }
 
 #username {
@@ -448,15 +477,67 @@ ul {
   margin-top: none;
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 800px) {
   .app {
     display: flex;
     flex-direction: column;
     width: auto;
-
     margin: 0px;
   }
-  .singleArticle {
+  .title {
+    box-shadow: none;
+    width: auto;
+  
+  }
+
+  .navBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding: 0px;
+    margin: 4%;
+  }
+  .welcome {
+    align-items: center;
+  }
+  .welcomeString {
+    justify-content: center;
+    width: auto;
+  }
+  .header{
+    height: auto;
+  }
+  .articlesSorter{
+    margin-top: 5%;
+  }
+  .singleArticle{
+   margin-top: 30px; 
+  }
+}
+
+@media screen and (max-width: 500px){
+  .sortForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+   
+  }
+  .topicName{
+    padding-bottom: 0%;
+  }
+}
+
+/* .singleArticle {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -514,10 +595,6 @@ ul {
     display: flex;
     flex-direction: column;
   }
-  .form {
-    display: flex;
-    flex-direction: row;
-  }
 
   .commentPoster {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -562,15 +639,7 @@ ul {
   #link {
     font-size: 200%;
   }
-  .navBar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: none;
-    justify-content: center;
-    height: 40%;
-    position: static;
-  }
+
 
   .nav {
     display: flex;
@@ -591,7 +660,7 @@ ul {
     margin: 0px;
     padding-top: 10%;
     justify-content: center;
-    font-size: 60%;
+    font-size: 50%;
     padding-top: 0%;
     height: auto;
   }
@@ -622,12 +691,6 @@ ul {
     padding: 0%;
   }
 
-  .sortForm {
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
   .articlesSorter {
     margin-top: 30px;
   }
@@ -647,11 +710,9 @@ ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-    width: 80%;
   }
   #articleDetails {
     display: flex;
     flex-direction: column;
   }
-}
+} */

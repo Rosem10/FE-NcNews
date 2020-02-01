@@ -11,9 +11,7 @@ function handleClick(props) {
 
 function DeleteComment(props) {
   return (
-    <button className="deleteButton" onClick={() => handleClick(props)}>
-      Delete your comment?
-    </button>
+    <button onClick={() => handleClick(props)}>Delete your comment?</button>
   );
 }
 
