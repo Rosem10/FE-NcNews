@@ -4,11 +4,12 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(55, 69, 82);
   align-items: center;
+  padding: 1%;
 }
 
 .articlesList {
   padding: 1%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -214,10 +215,11 @@
 .singleArticleHead {
   font-family: "Fugaz One";
   font-size: 60px;
-  padding-left: 20px;
   background-color: #facd48;
-
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .articleBody {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -240,6 +242,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-right: 10%;
 }
 
 .vn {
@@ -481,13 +484,12 @@ ul {
   .app {
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: 100%;
     margin: 0px;
   }
   .title {
     box-shadow: none;
     width: auto;
-  
   }
 
   .navBar {
@@ -511,29 +513,51 @@ ul {
     justify-content: center;
     width: auto;
   }
-  .header{
+  .header {
     height: auto;
   }
-  .articlesSorter{
+  .articlesSorter {
     margin-top: 5%;
   }
-  .singleArticle{
-   margin-top: 30px; 
+  .singleArticle {
+    margin-top: 30px;
   }
 }
 
-@media screen and (max-width: 500px){
-  .sortForm{
+@media screen and (max-width: 500px) {
+  .sortForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 10px;
-   
   }
-  .topicName{
+  .topicName {
     padding-bottom: 0%;
+  }
+  .singleArticleHead {
+    display: flex;
+    flex-direction: column;
+    font-size: 120%;
+    margin: 3%;
+  }
+  .subtitle {
+    display: flex;
+    flex-direction: column;
+  }
+  .form {
+    display: flex;
+    flex-direction: row;
+    height: 200%;
+    align-items: center;
+  }
+  .vn {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  #singleVoter {
+    padding: 0px;
   }
 }
 
@@ -545,12 +569,7 @@ ul {
     margin-top: 30px;
     margin: 0px;
   }
-  .singleArticleHead {
-    display: flex;
-    flex-direction: column;
-    font-size: 120%;
-    margin: 3%;
-  }
+
   .commentPoster {
     margin: 20px;
     display: flex;
