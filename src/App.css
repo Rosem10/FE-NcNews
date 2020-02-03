@@ -4,7 +4,6 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(55, 69, 82);
   align-items: center;
-  padding: 1%;
 }
 
 .articlesList {
@@ -101,7 +100,8 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-right: 3%;
+  padding-right: 5%;
+  
 }
 
 .articleCard {
@@ -165,7 +165,9 @@
 }
 .formContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-end;
+  
 }
 
 .commentsTitle {
@@ -197,6 +199,7 @@
 }
 #singleVoter {
   padding-left: 30px;
+
 }
 
 .singleArticle {
@@ -233,7 +236,6 @@
 .subtitle {
   display: flex;
   flex-direction: row;
-
   font-family: "Fugaz One";
 }
 .commentsList {
@@ -549,15 +551,22 @@ ul {
   .form {
     display: flex;
     flex-direction: row;
-    height: 200%;
-    align-items: center;
+    align-items: center; 
+    
   }
-  .vn {
-    padding-left: 2px;
-    padding-right: 2px;
-  }
+
   #singleVoter {
     padding: 0px;
+    
+  }
+
+  .homeArticlesSorter {
+    border-right: none;
+    border-left: none;
+  }
+  .commentHeader{
+    display: flex;
+    flex-direction: column;
   }
 }
 
